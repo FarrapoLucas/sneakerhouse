@@ -3,10 +3,10 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const registerUser = async (req, res) => { 
- const { name, email, password, birth_date } = req.body;
+ const {email, cpf, password, nome, telefone, cidade, estado, data_nascimento, sexo, idade} = req.body;
 
  try { 
- const [existingUser] = await db.promise().query('SELECT * FROM users WHERE email = ?', 
+ const [existingUser] = await db.promise().query('SELECT * FROM clientes WHERE email = ?', 
 [email]); 
  if (existingUser.length > 0) { 
  return res.status(400).send('Usuário já registrado'); 
@@ -15,7 +15,7 @@ const registerUser = async (req, res) => {
  const hashedPassword = await bcrypt.hash(password, 10); 
 
  await db.promise().query( 
- 'INSERT INTO users (name, email, password, birth_date) VALUES (?, ?, ?, ?)', 
+ 'INSERT INTO users (email, cpf, password, nome, telefone, cidade, estado, data_nascimento, sexo, idade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)', 
  [name, email, hashedPassword, birth_date] 
  ); 
  res.status(201).send('Usuário registrado com sucesso'); 
@@ -29,7 +29,7 @@ const loginUser = async (req, res) => {
  const { email, password } = req.body;
 
  try { 
- const [user] = await db.promise().query('SELECT * FROM users WHERE email = ?', [email]); 
+ const [user] = await db.promise().query('SELECT * FROM clientes WHERE email = ?', [email]); 
  if (user.length === 0) { 
  return res.status(400).send('Credenciais inválidas'); 
  } 

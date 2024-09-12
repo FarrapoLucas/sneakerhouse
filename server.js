@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const db = require('./config/db');
 
 const shRoutes = require('./routes/sh');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api/sneakyhouse', shRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/',(req,res) => (
     res.send('Servidor está rodando')
