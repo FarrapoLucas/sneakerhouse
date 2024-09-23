@@ -4,14 +4,14 @@ const shControllers = require('../controllers/shControllers');
 
 const authMiddleware = require('../middleware/authMiddleware');
 
-router.get('/', authMiddleware, transactionsController.getAllTransactions);
+router.get('/', authMiddleware, shControllers.getAllSneakers);
 
-router.post('/', authMiddleware, transactionsController.addTransaction);
+router.post('/', authMiddleware, shControllers.addSneakers);
 
-router.put('/:id', authMiddleware, transactionsController.updateTransactionPut);
+router.put('/:id', authMiddleware, shControllers.updateSneakersPut);
 
-router.patch('/:id', authMiddleware, transactionsController.updateTransactionPatch);
+router.patch('/:id', authMiddleware, shControllers.updateSneakersPatch);
 
-router.delete('/:id', authMiddleware, transactionsController.deleteTransaction);
+router.delete('/:id', authMiddleware, shControllers.deleteSneakers);
 
 module.exports = router;
