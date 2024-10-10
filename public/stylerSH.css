@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root{
+    --redSH: #7d1012
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.headerSH div{
+    background-color: var(--redSH);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.logo{
+    width: 200px;
+    padding: 0px 10px;
+}
+.search-container input{
+    width: 500px;
+    height: 40px;
+    padding: 0px 10px;
+    font-family: 'Sedgwick Ave Display';
+}
+.search-container img{
+    width: 50px;
+    padding: 0px 10px;
+}
+.search-container button{
+    border: none;
+    background-color: var(--redSH);
+}
+.favorito{
+    width: 50px;
+    padding: 0px 10px;
+}
+.carrinho{
+    width: 50px;
+    padding: 0px 10px;
+}
+.login{
+    font-family: 'Sedgwick Ave Display';
+}
+.grade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.logo-marcas{
+    width: 250px;
+    padding: 0px 10px;
+}
+.produtoshome{
+    font-family: 'Permanent Marker';
+    font-size: 13px;
+    padding: 10px 10px;
+    border: 2px solid black;
+    margin: 5px;
+}
+.produtoshome img{
+    width: 500px;
+}
+.produtoshome button{
+    font-family: 'Permanent Marker';
+    background-color: var(--redSH);
+    border: none;
+}
+footer{
+    background-color: var(--redSH);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sedgwick Ave Display';
+    height: 75px;
+}
+.redes-sociais{
+    width: 50px;
+    padding: 0px 10px;
+}
